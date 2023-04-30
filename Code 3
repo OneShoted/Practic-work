@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+       
+        int[] arr = new int[100];
+
+       
+        Random random = new Random();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = random.Next(-50, 51);
+        }
+
+       
+        int[] absCounts = new int[51]; 
+        foreach (int element in arr)
+        {
+            int absValue = Math.Abs(element); 
+            absCounts[absValue]++; 
+        }
+        int maxCount = 0; 
+        int mostCommonAbsValue = 0; 
+        for (int i = 0; i < absCounts.Length; i++)
+        {
+            if (absCounts[i] > maxCount)
+            {
+                maxCount = absCounts[i];
+                mostCommonAbsValue = i;
+            }
+        }
+        Console.WriteLine($"Абсолютне значення, що зустрiчається найчастiше: {mostCommonAbsValue}");
+    }
+}
