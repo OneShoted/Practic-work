@@ -1,0 +1,22 @@
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        Console.WriteLine("Введiть перше число:");
+        string num1Str = Console.ReadLine();
+
+        Console.WriteLine("Введiть друге число:");
+        string num2Str = Console.ReadLine();
+
+        Console.WriteLine("Введiть систему числення (2, 8 або 16):");
+        int baseNum = int.Parse(Console.ReadLine());
+
+        int num1 = Convert.ToInt32(num1Str, baseNum);
+        int num2 = Convert.ToInt32(num2Str, baseNum);
+
+        Console.WriteLine("Сума: " + Convert.ToString(num1 + num2, baseNum));
+        Console.WriteLine("Рiзниця: " + Convert.ToString(num1 - num2, baseNum));
+        Console.WriteLine("Добуток: " + Convert.ToString(num1 * num2, baseNum));
+        Console.WriteLine("Частка: " + Convert.ToString(num1 / num2, baseNum));
+    }
+}
